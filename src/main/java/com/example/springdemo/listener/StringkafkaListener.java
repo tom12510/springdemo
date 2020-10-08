@@ -10,11 +10,12 @@ public class StringkafkaListener {
 
 
     /**
-     *  接受的对象 message
+     * 接受的对象 message
+     *
      * @param message
      */
     @KafkaListener(topics = "miaomiaole")
     public void handle(String message) {
-        log.info("这是接受的数据{}",message);
+        log.error("这是接受的数据{}", message);
     }
 }

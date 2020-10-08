@@ -14,7 +14,7 @@ spring:
     active: dev
   kafka:
     bootstrap-servers:
-      - 127.0.0.1:9092
+      - 122.51.103.202:9092
     template:
       default-topic: miaomiaole
     consumer:
@@ -25,6 +25,16 @@ spring:
     producer:
           key-serializer: org.apache.kafka.common.serialization.StringSerializer
           value-serializer: org.apache.kafka.common.serialization.StringSerializer
+          retries: 2 #失败后重复发送的次数
+          compression-type: gzip  #压缩格式
+          batch-size: 1024 #批量发送消息的数量
+  mail:
+    host: smtp.163.com
+    port: 25
+    username: tom12510@163.com
+    password: borndifferent.1
+    default-encoding: utf-8
+
 logging:
   level:
     root: info
