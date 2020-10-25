@@ -14,7 +14,7 @@ public class StringkafkaListener {
      *
      * @param message
      */
-    @KafkaListener(topics = "miaomiaole")
+    //@KafkaListener(topics = "miaomiaole")
     public void handle(String message) {
         log.error("这是接受的数据{}", message);
     }

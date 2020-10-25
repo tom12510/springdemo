@@ -27,9 +27,9 @@ public class testLogServiceImpl implements ItestLogService {
     @MyAnnotation(value = "one",names = "1233456",isExits = true,age = 123)
     public Ingredient getDataByParams(List<String> params) throws ExecutionException, InterruptedException {
         log.info("这是喵喵乐的服务,测试kafka发送消息");
-        ListenableFuture<SendResult<String, String>> sendResultListenableFuture = kafkaTemplateForString.send("miaomiaole",params.toString());
+       // ListenableFuture<SendResult<String, String>> sendResultListenableFuture = kafkaTemplateForString.send("miaomiaole",params.toString());
 
-        System.out.println(sendResultListenableFuture.get().getRecordMetadata().toString());
+        System.out.println("ok");
         return null;
     }
 }
